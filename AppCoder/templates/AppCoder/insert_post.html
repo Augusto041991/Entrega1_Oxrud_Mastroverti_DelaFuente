@@ -1,0 +1,27 @@
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+
+{% block titulo %}
+<h1 class="mb-5">Insertar Posteo</h1>
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+
+<form action="{% url 'insertar-post' %}" method="post">
+    <label for="titulo">Titulo: </label>
+    <input id="titulo" type="text" name="titulo" value="titulo">
+    <label for="cuerpo">Cuerpo: </label>
+    <input id="cuerpo" type="text" name="cuerpo" value="cuerpo">
+    <label for="autor">Autor: </label>
+    <input id="autor" type="email" name="autor" value="autor">
+    <label for="fecha">Fecha: </label>
+    <input id="fecha" type="text" name="fecha" value="fecha">
+    <input type="submit" value="Buscar Campeon">
+    {% csrf_token %}
+</form>
+
+{% endblock %}
+

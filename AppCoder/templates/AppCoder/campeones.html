@@ -1,0 +1,28 @@
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+
+{% block titulo %}
+<h1 class="mb-5">Campeones</h1>
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+
+<form action="{% url 'buscar-campeon' %}" method="get">
+    <label for="nombre">Nombre </label>
+    <input id="nombre" type="text" name="nombre" value="nombre">
+    <input type="submit" value="Buscar Campeon">
+</form>
+
+{% for campeon in campeones %}
+
+{{campeon.nombre}} <br>
+{{campeon.lore}}
+<img src=""{{MEDIA_URL}}{{campeon.imagen}}" alt="imagen">  <!--https://stackoverflow.com/questions/15175032/show-images-in-django-templates-->
+
+{% endfor %}
+
+{% endblock %}
+
